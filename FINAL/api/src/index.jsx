@@ -11,21 +11,21 @@ app.use(express.json());
 app.use(cors());
 
 
-const dbConnection = async() => {
-  await mongoose
-    .connect('mongodb+srv://gayatrisbadgujar1606:Study$16@recipes.43oeohq.mongodb.net', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
-    .then(() => {
-      console.log("Connected to the database");
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-};
+// const dbConnection = async() => {
+//   await mongoose
+//     .connect('mongodb+srv://gayatrisbadgujar1606:Study$16@recipes.43oeohq.mongodb.net', {
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true,
+//     })
+//     .then(() => {
+//       console.log("Connected to the database");
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//     });
+// };
 
-dbConnection();
+// dbConnection();
 app.use("/", startRoutes);
 // app.use("/auth", userRouter);
 // app.use("/recipes", recipesRouter); // Corrected usage
