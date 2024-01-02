@@ -4,7 +4,9 @@ const mongoose = require("mongoose");
 const { userRouter } = require("./routes/user.js");
 const { recipesRouter } = require("./routes/recipes.js"); // Corrected import
 const app = express();
-
+const dotenv=require("dotenv")
+dotenv.config({path:"config.env"})
+const PORT=process.env.PORT
 app.use(express.json());
 app.use(cors());
 
@@ -26,5 +28,5 @@ const dbConnection = () => {
 };
 
 dbConnection();
-app.listen(3001, () => console.log("Server started on port 3001"));
+app.listen(PORT, () => console.log("Server started on port 3001"));
 
