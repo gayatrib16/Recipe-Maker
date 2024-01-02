@@ -9,7 +9,7 @@ dotenv.config({path:"config.env"})
 const PORT=process.env.PORT
 app.use(express.json());
 app.use(cors());
-
+app.use("/", startRoutes);
 app.use("/auth", userRouter);
 app.use("/recipes", recipesRouter); // Corrected usage
 
